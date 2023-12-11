@@ -1,0 +1,41 @@
+{
+    "name": "iammarjamal/camelui",
+    "description": "A simple, beautiful, and versatile UI, inspired by the Arabian desert.",
+    "type": "library",
+    "keywords": [
+        "livewire components",
+        "livewire-ui",
+        "wireui",
+        "laravel components",
+        "blade components"
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Camelui\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "iammarjamal",
+            "email": "ammar.jamal.jadallah@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^10.0",
+        "livewire/livewire": "^3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Camelui\\app\\Providers\\CamelUIProvider"
+            ],
+            "aliases": [
+                
+            ]
+        }
+    }
+}
