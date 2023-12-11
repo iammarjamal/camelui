@@ -31,7 +31,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "iammarjamal\\camelui\\app\\Providers\\CamelUIProvider"
+                "iammarjamal\\camelui\\app\\Providers\\ServiceProvider"
             ],
             "aliases": [
                 

@@ -1,20 +1,16 @@
 <?php
 
-namespace CamelUIProvider;
+namespace ServiceProvider;
 
-use Illuminate\Foundation\{AliasLoader, Application};
+use Illuminate\Foundation\Application;
 use Illuminate\Support;
 use Illuminate\Support\Facades\Blade;
-use Illuminate\View\Compilers\BladeCompiler;
-use CamelUI\Facades\CamelUI;
-use CamelUI\Providers\{BladeDirectives, CustomMacros};
-use CamelUI\Support\ComponentResolver;
-use CamelUI\View\Compilers\CamelUITagCompiler;
 
 /**
  * @property Application $app
- */
-class CamelUIProvider extends Support\ServiceProvider
+*/
+
+class ServiceProvider extends Support\ServiceProvider
 {
     public function register(): void
     {
