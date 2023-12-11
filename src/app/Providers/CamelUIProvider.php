@@ -1,6 +1,6 @@
 <?php
 
-namespace CamelUI;
+namespace CamelUIProvider;
 
 use Illuminate\Foundation\{AliasLoader, Application};
 use Illuminate\Support;
