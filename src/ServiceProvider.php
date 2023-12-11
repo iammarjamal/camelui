@@ -1,6 +1,6 @@
 <?php
 
-namespace CamelUI;
+namespace iammarjamal\camelui
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support;
