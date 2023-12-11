@@ -20,15 +20,13 @@ class ServiceProvider extends Support\ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__.'/../config/CamelUI.php' => config_path('CamelUI.php'),
-        ]);
+            __DIR__.'/config/CamelUI.php' => config_path('CamelUI.php'),
+        ], 'camelui.setup');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/CamelUI'),
-        ]);
+            __DIR__.'/views' => resource_path('views/vendor/CamelUI'),
+        ], 'camelui.setup');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'CamelUI');
-
-        Blade::componentNamespace( __DIR__.'\\..\\resources\\views\\components', 'CamelUI');
+        $this->loadViewsFrom(__DIR__.'/views/components', 'camelui');
     }
 }
