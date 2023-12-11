@@ -14,7 +14,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Camelui\\": "src/"
+            "iammarjamal\\Camelui\\": "src/"
         }
     },
     "authors": [
