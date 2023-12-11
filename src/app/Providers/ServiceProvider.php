@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceProvider;
+namespace CamelUI;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support;
@@ -29,6 +29,6 @@ class ServiceProvider extends Support\ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'CamelUI');
 
-        Blade::componentNamespace('CamelUI\\resources\\views\\components', 'CamelUI');
+        Blade::componentNamespace( __DIR__.'\\..\\resources\\views\\components', 'CamelUI');
     }
 }
