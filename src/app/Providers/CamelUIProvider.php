@@ -33,6 +33,6 @@ class CamelUIProvider extends Support\ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'CamelUI');
 
-        Blade::componentNamespace('CamelUI\\resources\\views\\Components', 'CamelUI');
+        Blade::componentNamespace('CamelUI\\resources\\views\\components', 'CamelUI');
     }
 }
