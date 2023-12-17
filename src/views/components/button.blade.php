@@ -20,9 +20,9 @@
         {{ $color == 'warning' ? 'text-white dark:bg-warning-500 bg-warning-600' : null }} 
         {{ $color == 'info' ? 'text-white dark:bg-info-500 bg-info-600' : null }}
         
-        {{ $color == 'white' ? 'text-white dark:bg-white-500 bg-white-600' : null }}
-        {{ $color == 'black' ? 'text-black dark:text-black' : null }}
-        {{ $color == 'none' ? '!bg-transparent !border-0 !shadow-none' : null }}
+        {{ $color == 'white' ? 'text-black bg-white' : null }}
+        {{ $color == 'black' ? 'text-white bg-black' : null }}
+        {{ $color == 'none' ? 'text-black dark:text-white bg-transparent !border-0 !shadow-none' : null }}
 
         mx-auto my-auto py-2 px-3 w-full transition duration-150 ease-out border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-80 disabled:opacity-70 hover:ease-in
         "
