@@ -69,7 +69,7 @@
         </button>
     </a>
     @else
-    <a {{ $attributes }}>
+    <a class="text-black dark:text-white" {{ $attributes }}>
         {{ $slot }}
     </a>
     @endif
