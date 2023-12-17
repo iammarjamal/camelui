@@ -1,46 +1,40 @@
 @props([ 
-    // Style
+    // Add Custom Class
     'class' => !empty($class) ? $class : null,
+    
+    // Select Color (By Default primary)
+    'color' => !empty($style) ? $style : 'primary',
+    
+    // Add Icon
     'icon' => !empty($icon) ? $icon : null,
-    'style' => !empty($style) ? $style : 'primary',
-    'size' => !empty($size) ? $size : null,
-    
-    // Button
-    'type' => !empty($type) ? $type : null,
-    
-    // A
-    'href' => !empty($href) ? $href : null,
-    'target' => !empty($target) ? $target : null,
-    'navigate' => !empty($navigate) ? $navigate : null,
-
-    // Alpinejs
-    'click' => !empty($click) ? $click : null,
-
-    // Wire
-    'wire' => !empty($wire) ? $wire : null,
 ])
 
 <div>
-    @if(empty($href))
     <button
-        type="{{ $type }}"
-        class="{{ $class }} 
-        {{ $style == 'primary' ? 'text-white dark:bg-indigo-500 bg-indigo-600' : null }}
-        {{ $style == 'secondary' ? 'text-white dark:bg-gray-500 bg-gray-600' : null }} 
-        {{ $style == 'warning' ? 'text-white dark:bg-yellow-500 bg-yellow-600' : null }} 
-        {{ $style == 'danger' ? 'text-white dark:bg-red-500 bg-red-600' : null }}
-        {{ $style == 'none' ? 'text-black dark:text-white !bg-transparent !border-0 !shadow-none' : null }}
-        flex items-center w-full px-5 py-3 transition duration-150 ease-out border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-80 disabled:opacity-70 hover:ease-in"
-        wire:loading.attr="disabled"
-        wire:target="{{$wire}}"
-        x-on:click="{{$click}}"
+        class="
+        {{ $class }} 
+        {{ $color == 'primary' ? 'text-white dark:bg-primary-600 bg-primary-500 ' : null }}
+        {{ $color == 'secondary' ? 'text-white dark:bg-secondary-500 bg-secondary-600' : null }} 
+        {{ $color == 'success' ? 'text-white dark:bg-success-500 bg-success-600' : null }} 
+        {{ $color == 'danger' ? 'text-white dark:bg-danger-500 bg-danger-600' : null }}
+        {{ $color == 'warning' ? 'text-white dark:bg-warning-500 bg-warning-600' : null }} 
+        {{ $color == 'info' ? 'text-white dark:bg-info-500 bg-info-600' : null }}
+        
+        {{ $color == 'white' ? 'text-white dark:bg-white-500 bg-white-600' : null }}
+        {{ $color == 'black' ? 'text-black dark:text-black' : null }}
+        {{ $color == 'none' ? '!bg-transparent !border-0 !shadow-none' : null }}
+
+        mx-auto my-auto py-2 px-3 w-full transition duration-150 ease-out border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-80 disabled:opacity-70 hover:ease-in
+        "
+        {{ $attributes }}
     >
+    
         @if(!empty($icon))
         <div class="flex justify-between w-full">
             <div class="flex items-center justify-start text-start">
                 <svg class="w-5 h-5 rtl:-mr-1 ltr:-ml-1 ltr:mr-2 rtl:ml-2 text-white animate-spin 
-                {{ $style == 'none' ? 'text-black dark:text-white' : 'text-white' }}
-                " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" wire:loading wire:target="{{$wire}}">
+                {{ $color == 'none' ? 'text-black dark:text-white' : 'text-white' }}
+                " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" wire:loading>
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
@@ -52,50 +46,20 @@
                 <i class="{{ $icon }} rtl:mr-4 ltr:ml-4"></i>
             </div>
         </div>
+        
         @else
         <div class="flex items-center justify-center w-full">
-            <h1 class="font-bold" wire:loading.class="hidden" wire:target="{{$wire}}">
+            <h1 class="font-bold">
                 {{ $slot }}
             </h1>
-            <svg class="w-5 h-5 text-black rtl:-mr-1 ltr:-ml-1 ltr:mr-2 rtl:ml-2 dark:text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" wire:loading wire:target="{{$wire}}">
+            <svg class="w-5 h-5 text-black rtl:-mr-1 ltr:-ml-1 ltr:mr-2 rtl:ml-2 dark:text-white animate-spin
+            {{ $color == 'none' ? 'text-black dark:text-white' : 'text-white' }}
+            " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" wire:loading>
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
         </div>
         @endif
+        
     </button>
-    @else
-    <a 
-    href="{{$href}}"
-    target="{{$target}}"
-    @if(!empty($navigate)) wire:navigate="true" @endif
-    wire:loading.attr="disabled"
-    class="{{ $class }}
-    {{ $style == 'primary' ? 'text-white dark:bg-indigo-600 bg-indigo-600' : null }}
-    {{ $style == 'secondary' ? 'text-white dark:bg-gray-600 bg-gray-600' : null }} 
-    {{ $style == 'warning' ? 'text-white dark:bg-yellow-600 bg-yellow-600' : null }} 
-    {{ $style == 'danger' ? 'text-white dark:bg-red-600 bg-red-600' : null }}
-    {{ $style == 'none' ? 'text-black dark:text-white !bg-transparent !border-0 !shadow-none' : null }}
-    flex items-center w-full px-3 py-2 transition duration-150 ease-out border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-80 disabled:opacity-70 hover:ease-in"
-    >
-        @if(!empty($icon))
-        <div class="flex justify-between w-full">
-            <div class="flex items-center justify-start text-start">
-                <h1 class="font-bold">
-                    {{ $slot }}
-                </h1>
-            </div>
-            <div class="flex items-center justify-end text-end">
-                <i class="{{ $icon }} rtl:mr-4 ltr:ml-4"></i>
-            </div>
-        </div>
-        @else
-        <div class="flex justify-center w-full">
-            <h1 class="font-bold">
-                {{ $slot }}
-            </h1>
-        </div>
-        @endif
-    </a>
-    @endif
 </div>
