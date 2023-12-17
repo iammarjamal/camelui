@@ -35,13 +35,5 @@
             ],
             "aliases": []
         }
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "@php artisan vendor:publish --tag=camelui.setup --force"
-        ],
-        "post-update-cmd": [
-            "@php artisan vendor:publish --tag=camelui.setup --force"
-        ]
     }
 }
