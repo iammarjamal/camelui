@@ -27,7 +27,6 @@
         
         {{ $color == 'white' ? 'text-white dark:bg-white-500 bg-white-600' : null }}
         {{ $color == 'black' ? 'text-black dark:text-black' : null }}
-        {{ $color == 'none' ? '!bg-transparent !border-0 !shadow-none' : null }}
 
         mx-auto my-auto py-2 px-3 w-full transition duration-150 ease-out border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-80 disabled:opacity-70 hover:ease-in
         "
@@ -69,7 +68,10 @@
         </button>
     </a>
     @else
-    <a class="text-black dark:text-white" {{ $attributes }}>
+    <a class="{{ $class }}
+    text-black dark:text-white" 
+    {{ $attributes }}
+    >
         {{ $slot }}
     </a>
     @endif
