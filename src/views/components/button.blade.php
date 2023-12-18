@@ -27,6 +27,7 @@
         mx-auto my-auto py-2 px-3 w-full transition duration-150 ease-out border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-80 disabled:opacity-70 hover:ease-in
         "
         {{ $attributes }}
+        wire:loading.attr="disabled"
     >
     
         @if(!empty($icon))

@@ -1,13 +1,14 @@
-@props([ 
-    'label' => !empty($label) ? $label : null, 
-    'placeholder' => !empty($placeholder) ? $placeholder : null, 
-    'value' => !empty($value) ? $value : null, 
-    'autofocus' => !empty($autofocus) ? $autofocus : null, 
-    'autocomplete' => !empty($autocomplete) ? $autocomplete : null, 
-    'disabled' => !empty($disabled) ? $disabled : false,
-    'required' => !empty($required) ? $required : true, 
-    'class' => !empty($class) ? $class : null, 
+@props([
+    // Add Custom Class
+    'class' => !empty($class) ? $class : null,
+    
+    // Add Label
+    'label' => !empty($label) ? $label : null,
+    
+    // Select Required
+    'required' => !empty($required) ? $required : true,
 
+    // Sync With Wire
     'wire' => !empty($wire) ? $wire : null,
 ])
 
@@ -18,10 +19,6 @@
     <div class="relative mt-2 rounded-md shadow-sm" x-data="{ ShowPassword: false }">
         <input
             :type="ShowPassword === true ? 'text' : 'password'"
-            placeholder="{{$placeholder}}"
-            value="{{$value}}"
-            autofocus="{{$autofocus}}"
-            autocomplete="{{$autocomplete}}"
             required="{{$required}}"
             class="
             @error($wire)
@@ -34,7 +31,7 @@
             wire:loading.attr="disabled"
             wire:target="{{$wire}}"
             wire:model="{{$wire}}"
-            :disabled="{{$disabled}}"
+            {{ $attributes }}
         />
         <div class="absolute inset-y-0 ltr:right-0 rtl:left-0 ltr:pr-3.5 rtl:pl-3.5 flex items-center text-zinc-400">
             <a class="cursor-pointer" x-on:click="ShowPassword = ! ShowPassword" wire:loading.attr="disabled" wire:target="{{$wire}}">
