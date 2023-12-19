@@ -1,29 +1,26 @@
-@props([ 
-    'label' => !empty($label) ? $label : null, 
-    'type' => !empty($type) ? $type : 'text',
-    'placeholder' => !empty($placeholder) ? $placeholder : null, 
-    'value' => !empty($value) ? $value : null, 
-    'autofocus' => !empty($autofocus) ? $autofocus : null, 
-    'autocomplete' => !empty($autocomplete) ? $autocomplete : null,
-    'disabled' => !empty($disabled) ? $disabled : false,
-    'required' => !empty($required) ? $required : true, 
-    'class' => !empty($class) ? $class : null, 
-    'icon' => !empty($icon) ? $icon : null,
+@props([
+    // Add Custom Class
+    'class' => !empty($class) ? $class : null,
+    
+    // Add Label
+    'label' => !empty($label) ? $label : null,
 
+    // Select Icon
+    'icon' => !empty($icon) ? $icon : null,
+    
+    // Select Required
+    'required' => !empty($required) ? $required : true,
+
+    // Sync With Wire
     'wire' => !empty($wire) ? $wire : null,
 ])
 
 <div>
     @if(!empty($label))
-    <label class="text-zinc-900 dark:text-zinc-50">{{ $label }}:</label>
+    <label class="text-zinc-900 dark:text-zinc-50">{{ $label }}@if($required == true)<span class="text-red-600 dark:text-red-400">*</span>@endif:</label>
     @endif
     <div class="relative mt-2 rounded-md shadow-sm">
         <input
-            :type="{{$type}}"
-            placeholder="{{$placeholder}}"
-            value="{{$value}}"
-            autofocus="{{$autofocus}}"
-            autocomplete="{{$autocomplete}}"
             :required="{{$required}}"
             class="
             {{ $class }}
@@ -38,7 +35,7 @@
             wire:loading.attr="disabled"
             wire:target="{{$wire}}"
             wire:model="{{$wire}}"
-            :disabled="{{$disabled}}"
+            {{ $attributes }}
         />
         @if(!empty($icon))
         <div class="absolute inset-y-0 ltr:right-0 rtl:left-0 ltr:pr-3.5 rtl:pl-3.5 flex items-center text-zinc-400">

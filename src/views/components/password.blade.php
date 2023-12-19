@@ -14,13 +14,14 @@
 
 <div>
     @if(!empty($label))
-    <label class="text-zinc-900 dark:text-zinc-50">{{ $label }}:</label>
+    <label class="text-zinc-900 dark:text-zinc-50">{{ $label }}@if($required == true)<span class="text-red-600 dark:text-red-400">*</span>@endif:</label>
     @endif
     <div class="relative mt-2 rounded-md shadow-sm" x-data="{ ShowPassword: false }">
         <input
             :type="ShowPassword === true ? 'text' : 'password'"
-            required="{{$required}}"
+            :required="{{$required}}"
             class="
+            {{ $class }}
             @error($wire)
             !border-red-400
             @enderror
@@ -28,6 +29,7 @@
             !border-green-400
             @endif
             w-full p-2 transition duration-100 ease-in-out border rounded-md shadow-sm rtl:pl-8 ltr:pr-8 placeholder-zinc-400 dark:bg-zinc-700 dark:text-zinc-300 dark:placeholder-zinc-400 border-zinc-200 focus:ring-primary-400 focus:border-primary-400 dark:border-zinc-500 form-input sm:text-sm focus:outline-none"
+            
             wire:loading.attr="disabled"
             wire:target="{{$wire}}"
             wire:model="{{$wire}}"
