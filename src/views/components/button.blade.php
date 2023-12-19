@@ -46,7 +46,7 @@
         </div>
         @else
         <div class="flex items-center justify-center w-full">
-            <h1 class="font-bold">
+            <h1 class="font-bold" wire:loading.class="hidden">
                 {{ $slot }}
             </h1>
             <svg class="w-5 h-5 text-black rtl:mr-1 ltr:ml-1 ltr:mr-2 rtl:ml-2 dark:text-white animate-spin
