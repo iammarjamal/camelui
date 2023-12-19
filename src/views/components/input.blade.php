@@ -9,7 +9,7 @@
     'icon' => !empty($icon) ? $icon : null,
     
     // Select Required
-    'required' => !empty($required) ? $required : true,
+    'required' => !empty($required) ? $required : null,
 
     // Sync With Livewire
     'wire' => !empty($wire) ? $wire : null,
