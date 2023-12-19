@@ -1,13 +1,15 @@
 @props([
+    // Add Custom Class
     'class' => !empty($class) ? $class : null,
-    'full' => !empty($full) ? $full : false,
-    'title' => !empty($title) ? $title : null,
+    
+    // Select Required
     'required' => !empty($required) ? $required : false,
+
+    // Sync With Livewire
     'wire' => !empty($wire) ? $wire : null,
 ])
 
 @teleport('body')
-@if(!empty($full)) {{ $required = true; }} @endif
 <div 
 class="fixed inset-0 z-50 flex items-center justify-center w-full h-full cursor-pointer bg-opacity-90 bg-zinc-900"
 x-show="{{ $wire }}"
@@ -31,65 +33,9 @@ x-transition:leave-end="opacity-0"
     x-transition:leave-start="transform opacity-100"
     x-transition:leave-end="transform translate-y-0 opacity-100"
     >
-    
-    @if(!empty($full))
-    <div class="flex w-full px-2 lg:gap-4 xl:gap-4 sm:flex-col md:flex-col lg:flex-row xl:flex-row">
-        <!-- header -->
-        <div class="flex items-center justify-center mb-3 text-center sm:flex-row md:flex-row lg:flex-col xl:flex-col">
-            <!-- Mobile -->
-            <div class="inline-flex flex-row justify-between w-full sm:flex md:flex lg:hidden xl:hidden sm:flex-row md:flex-row lg:flex-col xl:flex-col">
-                <div class="inline-flex items-center justify-start w-1/2 mt-1.5">
-                    <x-heading>
-                        {{ $title }}
-                    </x-heading>
-                </div>
-                <div class="inline-flex flex-row items-center justify-end w-1/2 cursor-pointer" x-on:click="{{$wire}} = false">
-                    <x-heading>
-                        {{ trans('app.back') }}
-                    </x-heading>
-                    <div>
-                        <i class='text-3xl ltr:hidden bx bx-chevron-left text-zinc-900 dark:text-zinc-50'></i>
-                        <i class='text-3xl rtl:hidden bx bx-chevron-right text-zinc-900 dark:text-zinc-50 '></i>
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile -->
-    
-            <!-- Desktop -->
-            <div class="top-0 flex flex-col h-full cursor-pointer sm:hidden md:hidden lg:flex xl:flex" x-on:click="{{$wire}} = false">
-                <x-card class="!h-24">
-                    <x-heading size="sm">
-                        <i class="fa-2x bx bx-x"></i>
-                    </x-heading>
-                </x-card>
-            </div>
-            <!-- Desktop -->
-        </div>
-        <!-- header -->
-        
-        <!-- Body -->
-        <div class="w-full">
-            {{ $slot }}
-        </div>
-        <!-- Body -->
-
-        <div class="items-center justify-center w-full mt-2 text-center sm:flex md:flex lg:hidden xl:hidden">
-            <a class="text-gray-500 underline cursor-pointer text-md dark:text-gray-400" x-on:click="{{$wire}} = false">
-                {{ trans('app.close') }}
-            </a>
-        </div>
-    </div>
-    @else
         <!-- Body -->
         {{ $slot }}
         <!-- Body -->
-
-        <div class="flex items-center justify-center w-full mt-5 text-center">
-            <a class="text-gray-500 underline cursor-pointer text-md dark:text-gray-400" x-on:click="{{$wire}} = false">
-                {{ trans('app.close') }}
-            </a>
-        </div>
-    @endif
     </div>
 </div>
 @endteleport

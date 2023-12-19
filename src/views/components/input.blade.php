@@ -11,7 +11,7 @@
     // Select Required
     'required' => !empty($required) ? $required : true,
 
-    // Sync With Wire
+    // Sync With Livewire
     'wire' => !empty($wire) ? $wire : null,
 ])
 
