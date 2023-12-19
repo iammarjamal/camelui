@@ -33,7 +33,7 @@
         @if(!empty($icon))
         <div class="flex justify-between w-full">
             <div class="flex items-center justify-start text-start">
-                <svg class="w-5 h-5 rtl:-mr-1 ltr:-ml-1 ltr:mr-2 rtl:ml-2 text-white animate-spin 
+                <svg class="w-5 h-5 rtl:mr-1 ltr:ml-1 ltr:mr-2 rtl:ml-2 text-white animate-spin 
                 {{ $color == 'none' ? 'text-black dark:text-white' : 'text-white' }}
                 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" wire:loading>
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -53,7 +53,7 @@
             <h1 class="font-bold">
                 {{ $slot }}
             </h1>
-            <svg class="w-5 h-5 text-black rtl:-mr-1 ltr:-ml-1 ltr:mr-2 rtl:ml-2 dark:text-white animate-spin
+            <svg class="w-5 h-5 text-black rtl:mr-1 ltr:ml-1 ltr:mr-2 rtl:ml-2 dark:text-white animate-spin
             {{ $color == 'none' ? 'text-black dark:text-white' : 'text-white' }}
             " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" wire:loading>
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
