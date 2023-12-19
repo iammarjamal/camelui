@@ -27,11 +27,11 @@ class ServiceProvider extends Support\ServiceProvider
     {
         $this->publishes([
             __DIR__.'/config/camelui.php' => config_path('camelui.php'),
-        ], 'camelui.setup');
+        ], 'camelui.config');
 
         $this->publishes([
             __DIR__.'/views' => resource_path('views/vendor/camelui'),
-        ], 'camelui.setup');
+        ], 'camelui.components');
 
         $this->loadViewsFrom(__DIR__."/../views/components", 'camelui');
     }
