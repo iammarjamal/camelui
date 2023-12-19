@@ -19,17 +19,14 @@
         {{ $color == 'danger' ? 'text-white dark:bg-danger-500 bg-danger-600' : null }}
         {{ $color == 'warning' ? 'text-white dark:bg-warning-500 bg-warning-600' : null }} 
         {{ $color == 'info' ? 'text-white dark:bg-info-500 bg-info-600' : null }}
-        
         {{ $color == 'white' ? 'text-black bg-white' : null }}
         {{ $color == 'black' ? 'text-white bg-black' : null }}
         {{ $color == 'none' ? 'text-black dark:text-white bg-transparent !border-0 !shadow-none' : null }}
-
         mx-auto my-auto py-2 px-3 w-full transition duration-150 ease-out border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-80 disabled:opacity-70 hover:ease-in
         "
         {{ $attributes }}
         wire:loading.attr="disabled"
     >
-    
         @if(!empty($icon))
         <div class="flex justify-between w-full">
             <div class="flex items-center justify-start text-start">
@@ -47,7 +44,6 @@
                 <i class="{{ $icon }} rtl:mr-4 ltr:ml-4"></i>
             </div>
         </div>
-        
         @else
         <div class="flex items-center justify-center w-full">
             <h1 class="font-bold">
@@ -61,6 +57,5 @@
             </svg>
         </div>
         @endif
-        
     </button>
 </div>
