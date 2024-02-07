@@ -46,7 +46,7 @@
         </div>
         @else
         <div class="flex items-center justify-center w-full">
-            <h1 class="font-bold" wire:loading.class="hidden">
+            <h1 class="font-bold" wire:loading.class="hidden" {{ $attributes->whereStartsWith('wire:target') }}>
                 {{ $slot }}
             </h1>
             <svg class="w-5 h-5 text-black dark:text-white animate-spin

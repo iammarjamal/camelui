@@ -17,7 +17,7 @@
 
 <div>
     @if(!empty($label))
-    <label class="text-zinc-900 dark:text-zinc-50">{{ $label }}@if($required == true)<span class="text-red-600 dark:text-red-400">*</span>@endif:</label>
+    <label class="text-zinc-900 dark:text-zinc-50">{{ $label }}@if($required != 'false')<span class="text-red-600 dark:text-red-400">*</span>@endif:</label>
     @endif
     <div class="relative mt-2 rounded-md shadow-sm">
         <input
