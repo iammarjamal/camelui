@@ -22,7 +22,7 @@ return [
         'Style' => [
             'Rounded' => 'rounded-2xl',      // Rounded corners
             'Shadow' => 'shadow-sm',         // Shadow effect
-        ]
-        
-    ]
+        ],
+
+    ],
 ];

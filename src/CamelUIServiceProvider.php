@@ -5,8 +5,6 @@ namespace CamelUI\CamelUI;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-use CamelUI\CamelUI\Components\Modal\Modal;
-
 class CamelUIServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void

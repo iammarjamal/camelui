@@ -2,9 +2,9 @@
 
 namespace CamelUI\CamelUI\Tests;
 
+use CamelUI\CamelUI\CamelUIServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CamelUI\CamelUI\CamelUIServiceProvider;
 
 class TestCase extends Orchestra
 {
