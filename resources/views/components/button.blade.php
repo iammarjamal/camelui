@@ -16,7 +16,7 @@
         {{ $color == 'primary' ? 'text-white dark:bg-primary-600 bg-primary-500 ' : null }}
         {{ $color == 'secondary' ? 'text-white dark:bg-secondary-500 bg-secondary-600' : null }} 
         {{ $color == 'success' ? 'text-white dark:bg-success-500 bg-success-600' : null }} 
-        {{ $color == 'danger' ? 'text-white dark:bg-danger-500 bg-danger-600' : null }}
+        {{ $color == 'danger' ? 'text-white dark:bg-red-500 bg-red-600' : null }}
         {{ $color == 'warning' ? 'text-white dark:bg-warning-500 bg-warning-600' : null }} 
         {{ $color == 'info' ? 'text-white dark:bg-info-500 bg-info-600' : null }}
         {{ $color == 'white' ? 'text-black bg-white' : null }}
