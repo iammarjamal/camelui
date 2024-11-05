@@ -2,6 +2,10 @@
 
 All notable changes to `CamelUI` will be documented in this file.
 
+## v1.90.1 - 2024-11-03
+
+### **v1.90.1**
+
 ## v1.9.1 - 2024-10-27
 
 ### **v1.9.1**
